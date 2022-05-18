@@ -1,5 +1,15 @@
 # psyche-orbit-dataviewer
 An interactive website with 3D models that visualized the types of data that will be gained from different orbital phases during the Psyche mission. 
+## Explanations
+
+In January 2027, the Psyche Spacecraft will begin orbiting the asteroid, gathering data
+on it’s surface, composition, and interior structure. This is a visiulization of the data we
+hope to gain accross four different phases of orbits.
+
+The spacecraft will be constantly gathering data, but because of distance,
+stability, and lighting, certain kinds of data will be prioritized for particular
+groups of orbits. Click on each one to learn more!
+
 ## Orbit Descriptions
 ### Orbit A
 For the first part of our exploration, we will be focused on measuring the 
