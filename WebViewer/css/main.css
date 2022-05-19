@@ -5,46 +5,54 @@ body {
 
 .splash {
   position: fixed;
-  z-index: 1;
+  z-index: 10;
   left: 0;
   top: 0;
   width: 100%;
   height: 100vh;
-  -webkit-transition: 1s;
-  transition: 1s;
-  opacity: 1;
-}
-
-.splash .title {
-  position: absolute;
-  color: #ffffff;
-  font-family: 'tachyon';
-  top: 30%;
-  left: 50%;
-  text-transform: uppercase;
-  text-align: center;
-  opacity: 0;
+  background-color: #302144;
 }
 
 .splash h1 {
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  position: relative;
+  color: #ffffff;
+  font-family: "tachyon";
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transform: translate(0%, 60%);
+          transform: translate(0%, 60%);
+  z-index: 100;
   font-size: 12vw;
+  letter-spacing: 1rem;
+  opacity: 0;
 }
 
 .splash h3 {
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  position: relative;
+  color: #ffffff;
+  font-family: "tachyon";
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-transform: translate(0%, -50%);
+          transform: translate(0%, -50%);
+  z-index: 100;
   font-weight: 200;
   text-transform: uppercase;
   font-size: 1.5vw;
   white-space: nowrap;
+  opacity: 0;
 }
 
-.splash.active {
+.splash.active h1 {
   opacity: 1;
-  -webkit-transition: ease-in-out 0.5s;
-  transition: ease-in-out 0.5s;
+  -webkit-transition: ease-in-out 1s;
+  transition: ease-in-out 1s;
+}
+
+.splash.active h3 {
+  opacity: 1;
+  -webkit-transition: ease-in-out 1s;
+  transition: ease-in-out 1s;
 }
 
 .splash.end {
@@ -54,7 +62,7 @@ body {
 }
 
 header {
-  font-family: 'tachyon';
+  font-family: "tachyon";
 }
 
 canvas {
