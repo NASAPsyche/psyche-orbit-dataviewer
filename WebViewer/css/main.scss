@@ -152,9 +152,10 @@ body {
 
 .orbits {
     position: absolute;
-    width: 80%;
+    width: 20%;
     height: 100%;
     padding-left: 3vw;
+    color: white;
 
     h2 {
         font-family: $font-main;
@@ -202,6 +203,14 @@ button:hover {
     transform: scale(1.25);
 }
 
+#bF {
+    display: none;
+}
+
+#bF.show {
+    display: block;
+}
+
 //orbit descriptions
 #pA {
     display: none;
@@ -216,6 +225,10 @@ button:hover {
 }
 
 #pD {
+    display: none;
+}
+
+#pF {
     display: none;
 }
 
@@ -236,10 +249,21 @@ button:hover {
     display: block;
 }
 
-canvas {
+#pF.show {
     display: block;
-    position: absolute;
+}
+
+#thanks {
+    display: none;
+}
+
+#thanks.show {
+    display: block;
+}
+
+canvas {
+    display: flex;
     left: 0;
     top: 0;
-    z-index: -100;
+    z-index: -1;
 }
