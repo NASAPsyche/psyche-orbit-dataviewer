@@ -150,9 +150,10 @@ body {
 
 .orbits {
   position: absolute;
-  width: 80%;
+  width: 20%;
   height: 100%;
   padding-left: 3vw;
+  color: white;
 }
 
 .orbits h2 {
@@ -203,6 +204,14 @@ button:hover {
           transform: scale(1.25);
 }
 
+#bF {
+  display: none;
+}
+
+#bF.show {
+  display: block;
+}
+
 #pA {
   display: none;
 }
@@ -216,6 +225,10 @@ button:hover {
 }
 
 #pD {
+  display: none;
+}
+
+#pF {
   display: none;
 }
 
@@ -235,11 +248,24 @@ button:hover {
   display: block;
 }
 
-canvas {
+#pF.show {
   display: block;
-  position: absolute;
+}
+
+#thanks {
+  display: none;
+}
+
+#thanks.show {
+  display: block;
+}
+
+canvas {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   left: 0;
   top: 0;
-  z-index: -100;
+  z-index: -1;
 }
 /*# sourceMappingURL=main.css.map */
