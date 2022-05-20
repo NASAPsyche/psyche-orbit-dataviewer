@@ -1,5 +1,10 @@
 $font-main: 'tachyon';
+$font-small: 'korolev';
 $purple: #302144;
+$sunsetpurple: #592651;
+$magenta: #a53f5b;
+$coral: #ef5966;
+$orange: #f47c33;
 
 body {
     margin: 0;
@@ -13,8 +18,8 @@ body {
     left: 0;
     top: 0;
     width: 100%;
-    height: 100vh;
-    background-color: $purple;
+    height: 100%;
+    background-image: linear-gradient($sunsetpurple, $purple, black);
     
     h1 {
         position: relative;
@@ -33,13 +38,13 @@ body {
         position: relative;
         color: #ffffff;
         font-family: $font-main;
+        font-weight: 200;
         text-transform: uppercase;
         text-align: center;
         transform: translate(0%, -50%);
         z-index: 100;
-        font-weight: 200;
         text-transform: uppercase;
-        font-size: 1.5vw;
+        font-size: 2vw;
         white-space: nowrap;
         opacity: 0;
     }
@@ -58,13 +63,177 @@ body {
     }
 }
 
-.splash.end {
+.splash.fade {
     opacity: 0;
-    transition: ease-in-out 0.5s;
+    transition: ease-in-out 2s;
+
+    h1 {
+        opacity: 0;
+        transition: ease-in-out 2s;
+    }
+
+    h3 {
+        opacity: 0;
+        transition: ease-in-out 2s;
+    }
 }
 
-header {
-    font-family: $font-main;
+.splash.end {
+    display: none;
+}
+
+.intro {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    background-image: linear-gradient($sunsetpurple, $purple, black);
+    background-clip: border-box;
+    color: #ffffff;
+
+    h2 {
+        opacity: 0;
+        padding-top: 10rem;
+        font-family: $font-main;
+        font-size: 5vw;
+        margin-bottom: 1rem;
+    }
+
+    @media screen and (min-width: 1000px) {
+        h2 {
+            font-size: 3vw;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        h2 {
+            font-size: 30px;
+        }
+    }
+
+    p {
+        opacity: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        padding-left: 2vw;
+        padding-right: 2vw;
+    }
+
+    button {
+        opacity: 0;
+    }
+}
+
+.intro.active {
+    
+    h2 {
+        opacity: 1;
+        transition: 2s;
+    }
+
+    p {
+        opacity: 1;
+        transition: 2s;
+    }
+
+    button {
+        opacity: 1;
+        transition: 2s;
+    }
+}
+
+.intro.fade {
+    opacity: 0;
+    transition: ease-in-out 2s;
+}
+
+.intro.end {
+    display: none;
+}
+
+.orbits {
+    position: absolute;
+    width: 80%;
+    height: 100%;
+    padding-left: 3vw;
+
+    h2 {
+        font-family: $font-main;
+        font-size: 3vw;
+    }
+}
+
+.orbits.hide {
+    display: none;
+    transition: ease-in-out 5s;
+}
+
+button {
+    background-color: $coral;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 20px;
+    font-family: $font-small;
+    font-weight: 700;
+    font-size: 15px;
+    padding-left: 0.4em;
+    padding-right: 0.4em;
+    padding-top: 0.2em;
+    text-align: center;
+    display: block;
+    margin: 1em;
+}
+
+#startButton {
+    background-color: $coral;
+    font-size: 25px;
+    border-radius: 30px;
+    color: #ffffff;
+    padding-top: 0.17em;
+    display: inline;
+}
+
+button:hover {
+    background-color: $orange;
+    transform: scale(1.25);
+}
+
+#startButton:hover {
+    background-color: $orange;
+    transform: scale(1.25);
+}
+
+//orbit descriptions
+#pA {
+    display: none;
+}
+
+#pB {
+    display: none;
+}
+
+#pC {
+    display: none;
+}
+
+#pD {
+    display: none;
+}
+
+// show orbit descriptions
+#pA.show {
+    display: block;
+}
+
+#pB.show {
+    display: block;
+}
+
+#pC.show {
+    display: block;
+}
+
+#pD.show {
+    display: block;
 }
 
 canvas {
