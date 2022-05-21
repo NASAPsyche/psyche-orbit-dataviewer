@@ -155,7 +155,7 @@ scene.add( plane );
 // sun light from top side
 const sun = new THREE.DirectionalLight( 0x404040, 10 );
 sun.castShadow = true;
-sun.position.set(1, 1, 0);
+sun.position.set(0.75, 0.5, 0);
 scene.add(sun);
 
 sun.shadow.mapSize.width = 512; // default
@@ -170,7 +170,15 @@ scene.add(ambient);
 // lighting for certain models
 const ambientBright = new THREE.AmbientLight( 0x404040, 7 );
 
+const sun2 = new THREE.DirectionalLight( 0x404040, 10 );
+sun2.castShadow = true;
+sun2.position.set(-1, -1, 0);
+
 // const gridHelper = new THREE.GridHelper( 200, 50 );
+// const sunHelper = new THREE.DirectionalLightHelper( sun, 5, 0xf47c33 );
+// scene.add( sunHelper );
+// const sunHelper2 = new THREE.DirectionalLightHelper( sun, 5, 0xf9a000 );
+// scene.add( sunHelper2 );
 
 // orbital controls (click and drag)
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -225,6 +233,10 @@ let bF = document.getElementById('bF');
 var orbitA = document.getElementById('orbitA');
 orbitA.onclick = function buttonA() {
     pA.classList.toggle('show');
+    if (pB) pB.classList.remove('show');
+    if (pC) pC.classList.remove('show');
+    if (pD) pD.classList.remove('show');
+    if (pF) pF.classList.remove('show');
 
     scene.remove(paintedModel);
     scene.add(heightModel);
@@ -234,6 +246,7 @@ orbitA.onclick = function buttonA() {
 
     scene.add(ambientBright);
     scene.add(sun);
+    scene.remove(sun2);
 
     animate1();
 }
@@ -242,6 +255,10 @@ orbitA.onclick = function buttonA() {
 var orbitB = document.getElementById('orbitB');
 orbitB.onclick = function buttonB() {
     pB.classList.toggle('show');
+    if (pA) pA.classList.remove('show');
+    if (pC) pC.classList.remove('show');
+    if (pD) pD.classList.remove('show');
+    if (pF) pF.classList.remove('show');
 
     scene.add(paintedModel);
     scene.remove(heightModel);
@@ -251,6 +268,7 @@ orbitB.onclick = function buttonB() {
 
     scene.remove(ambientBright);
     scene.add(sun);
+    scene.remove(sun2);
 
     animate1();
 }
@@ -259,6 +277,10 @@ orbitB.onclick = function buttonB() {
 var orbitC = document.getElementById('orbitC');
 orbitC.onclick = function buttonC() {
     pC.classList.toggle('show');
+    if (pA) pA.classList.remove('show');
+    if (pB) pB.classList.remove('show');
+    if (pD) pD.classList.remove('show');
+    if (pF) pF.classList.remove('show');
 
     scene.remove(paintedModel);
     scene.remove(heightModel);
@@ -266,8 +288,9 @@ orbitC.onclick = function buttonC() {
     scene.remove(impactModel);
     scene.remove(finalModel);
 
-    scene.remove(ambientBright);
+    scene.add(ambientBright);
     scene.add(sun);
+    scene.add(sun2);
 
     animate1();
 }
@@ -276,6 +299,10 @@ orbitC.onclick = function buttonC() {
 var orbitD = document.getElementById('orbitD');
 orbitD.onclick = function buttonD() {
     pD.classList.toggle('show');
+    if (pA) pA.classList.remove('show');
+    if (pB) pB.classList.remove('show');
+    if (pC) pC.classList.remove('show');
+    if (pF) pF.classList.remove('show');
 
     scene.remove(paintedModel);
     scene.remove(heightModel);
@@ -285,6 +312,7 @@ orbitD.onclick = function buttonD() {
 
     scene.remove(ambientBright);
     scene.add(sun);
+    scene.remove(sun2);
 
     animate1();
 
@@ -293,6 +321,10 @@ orbitD.onclick = function buttonD() {
 
 bF.onclick = function bF() {
     pF.classList.toggle('show');
+    if (pA) pA.classList.remove('show');
+    if (pB) pB.classList.remove('show');
+    if (pC) pC.classList.remove('show');
+    if (pD) pD.classList.remove('show');
 
     scene.remove(paintedModel);
     scene.remove(heightModel);
@@ -302,6 +334,7 @@ bF.onclick = function bF() {
 
     scene.add(ambientBright);
     scene.add(sun);
+    scene.remove(sun2);
 
     animate1();
 
